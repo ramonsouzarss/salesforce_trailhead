@@ -4,7 +4,7 @@ import CONTACT_OBJECT from '@salesforce/schema/Contact.AccountId';
 import FIRST_NAME_FIELD from '@salesforce/schema/Contact.FirstName';
 import LAST_NAME_FIELD from '@salesforce/schema/Contact.LastName';
 import EMAIL_FIELD from '@salesforce/schema/Contact.Email';
-export default class AccountCreator extends LightningElement {
+export default class ContactCreator extends LightningElement {
     objectApiName = CONTACT_OBJECT;
     fields = [FIRST_NAME_FIELD, LAST_NAME_FIELD, EMAIL_FIELD];
     handleSuccess(event) {
