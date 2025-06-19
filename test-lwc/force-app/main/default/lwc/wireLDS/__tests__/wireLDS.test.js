@@ -10,6 +10,21 @@ describe('c-wire-l-d-s', () => {
     }
   });
   describe('getRecord @wire data', () => {
+    describe('getRecord @wire error', () => {
+        it('shows error message', () => {
+        const element = createElement('c-wire-l-d-s', {
+            is: WireLDS
+        });
+        document.body.appendChild(element);
+        // Emit error from @wire
+        getRecord.error();
+        return Promise.resolve().then(() => {
+            const errorElement = element.shadowRoot.querySelector('p');
+            expect(errorElement).not.toBeNull();
+            expect(errorElement.textContent).toBe('No account found.');
+        });
+        });
+    });
     it('renders contact details', () => {
       const element = createElement('c-wire-l-d-s', {
         is: WireLDS
